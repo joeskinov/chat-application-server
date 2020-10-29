@@ -14,7 +14,7 @@ exports.RoomMessage = require('./model')
 exports.schema = require('./model').schema
 
 const router = new Router()
-const { title, description, parcel_by_size, parcel, delivery_address, pickup_address, budget, status, deleted, deliverer, owner, created } = schema.tree
+const { message, chatRoom, status, deleted, owner,created } = schema.tree
 
 /**
  * @api {post} /deliveryOrders Create delivery order
@@ -41,7 +41,7 @@ const { title, description, parcel_by_size, parcel, delivery_address, pickup_add
  */
 router.post('/',
   token({ required: true }),
-  body({ title, description, parcel_by_size, parcel, delivery_address, pickup_address, budget, status, deleted, deliverer, owner, created }),
+  body({ message, chatRoom, status, deleted, owner, created }),
   create)
 
 /**
@@ -57,7 +57,7 @@ router.post('/',
  */
 router.get('/',
   token({ required: true }),
-  query(),
+  query({ message, chatRoom, status, deleted, owner, created }),
   index)
 
 /**
@@ -100,7 +100,7 @@ router.get('/:id',
  */
 router.put('/:id',
   token({ required: true }),
-  body({ title, description, parcel_by_size, parcel, delivery_address, pickup_address, budget, status, deleted, deliverer, owner, created }),
+  body({ message, chatRoom, status, deleted, owner, created }),
   update)
 
 /**

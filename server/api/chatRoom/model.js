@@ -57,9 +57,9 @@ chatRoomSchema.methods = {
       // simple view
       id: this.id,
       creator: this.creator.view(full),
+      user2: this.participants[0],
       name: this.name,
       participants: this.participants,
-      created: this.created,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt
     }

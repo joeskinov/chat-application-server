@@ -25,7 +25,7 @@ const config = {
   test: { },
   development: {
     mongo: {
-      uri: 'mongodb://localhost/smart-delivery-dev',
+      uri: 'mongodb://localhost/chat-app',
       options: {
         debug: true
       }
@@ -35,7 +35,7 @@ const config = {
     ip: process.env.IP || undefined,
     port: process.env.PORT || 8080,
     mongo: {
-      uri: process.env.MONGODB_URI || 'mongodb://localhost/smart-delivery'
+      uri: process.env.MONGODB_URI || 'mongodb://localhost/chat-app-live'
     }
   }
 }

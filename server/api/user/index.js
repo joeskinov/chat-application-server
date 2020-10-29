@@ -17,7 +17,7 @@ let schema =require('./model').schema
 exports.User = require('./model').model
 
 const router = new Router()
-const { email, password, name, picture, role } = schema.tree
+const { email, password, name, phonenumber, picture, role } = schema.tree
 
 /**
  * @api {get} /users Retrieve users
@@ -76,7 +76,7 @@ router.get('/:id',
  */
 router.post('/',
   master(),
-  body({ email, password, name, picture, role }),
+  body({ email, password, name, phonenumber, picture, role }),
   create)
 
 /**
