@@ -12,7 +12,7 @@ exports.create = ({ user, bodymen: { body } }, res, next) =>
 exports.index = ({ querymen: { query, select, cursor } }, res, next) =>
   RoomMessage.find(query, select, cursor)
     .populate('creator')
-    .then((chatRooms) => chatRooms.map((roomMessage) => roomMessage.view()))
+    .then((roomMessages) => roomMessages.map((roomMessage) => roomMessage.view()))
     .then(success(res))
     .catch(next)
 

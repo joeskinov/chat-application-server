@@ -14,8 +14,13 @@ const roomMessageSchema = new Schema({
   message: {
     type: String
   },
+  seen: {
+    type: Boolean,
+    default: false
+  },
   deleted: {
-    type: String
+    type: Boolean,
+    default: false
   },
   created: {
     type: String
